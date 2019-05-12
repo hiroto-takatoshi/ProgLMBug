@@ -1,0 +1,10 @@
+
+(preprossesing)
+python2 walk.py "/mnt/c/Users/admin/testfolder/netty-4.1" "/mnt/c/Users/admin/outfolder/netty-4.1"
+
+(evaluation)
+python2 bin/train.py data/netty-4.1 3
+
+python2 bin/cross.py data/netty-4.1 3 -ENTROPY -BACKOFF -TEST -CACHE -CACHE_ORDER 3 -CACHE_DYNAMIC_LAMBDA -WINDOW_CACHE -WINDOW_SIZE 5000 -FILES
+
+./completion -FILES -ENTROPY -BACKOFF -TEST -CACHE -CACHE_ORDER 3 -CACHE_DYNAMIC_LAMBDA -WINDOW_CACHE -WINDOW_SIZE 5000 -NGRAM_FILE data/netty-4.1/fold6.train.3grams -SCOPE_FILE data/netty-4.1/fold6.scope  -INPUT_FILE data/line.test -OUTPUT_FILE data/line.output
