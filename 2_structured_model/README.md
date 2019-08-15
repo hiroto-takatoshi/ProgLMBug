@@ -9,7 +9,7 @@ docker run -v %cd%:/e -w /e --entrypoint bash --rm -it yijun/fast:ggnn
 
 The implementation is from [https://github.com/bdqnghi/bi-tbcnn].
 
-Replace the `parser/run` file to our version. Then put the catagorized files into the srcs folder and run:
+Replace the `parser/run` file to our version. Then put the categorized files into the srcs folder and run:
 
 ```
 parser/run # has to be done in the docker image
